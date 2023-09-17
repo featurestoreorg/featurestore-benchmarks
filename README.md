@@ -27,8 +27,6 @@ We have defined experiments for two common us cases:
    N rows of precomputed feature values is returned.
  * feature freshness for streaming feature writes (how long does it take from when an event arrives at a message broker, until the corresponding feature value has been updated and is available for reading from the online feature store).
 
-We use the NYC taxi dataset for these benchmarks, due to its reasonable size (~3 GBs).
-
 The potential performance bottlenecks that influence the Online API experiments include:
 
  * reading from the (row-oriented / key-value) tables;
