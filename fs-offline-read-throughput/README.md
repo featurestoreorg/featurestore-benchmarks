@@ -32,38 +32,30 @@ Datasets used for offline read benchmarks
 
 ![pandas_read_secs](./images/fs-offline-pandas-read-throughput-secs.png)
 
-Read from Offline Feature Store to Pandas Throughput (time taken)
 
 ![pandas_read_relative](./images/fs-offline-pandas-read-throughput-relative.png)
 
-Read from Offline Feature Store to Pandas Throughput (relative)t
 
 # Create Parquet Training Data as Files Benchmark
 
 ![pandas_td_create_secs](./images/fs-offline-td-write-throughput-secs.png)
 
-Create Training Data as Parquet files using Offline Feature Store (time taken)
 
 ![pandas_td_create_secs](./images/fs-offline-td-write-throughput-relative.png)
 
-Create Training Data as Parquet files using Offline Feature Store (relative)
 
 # Pandas Point-in-Time Join Benchmark
 
 ![pit_join_secs](./images/fs-offline-pit-join-pandas-throughput-secs.png)
 
-Read Pandas with Point-in-Time Join (time taken)
 
 ![pit_join_secs](./images/fs-offline-pit-join-pandas-throughput-relative.png)
 
-Read Pandas with Point-in-Time Join (relative))
 
 # Create Parquet Training Data with Point-in-Time Join Benchmark
 
 ![pit_join_secs](./images/fs-offline-pit-join-td-throughput-secs.png)
 
-Create Training Data as Parquet files with Point-in-Time Join (time taken)
 
 ![pit_join_secs](./images/fs-offline-pit-join-td-throughput-relative.png)
 
-Create Training Data as Parquet files with Point-in-Time Join (relative))
