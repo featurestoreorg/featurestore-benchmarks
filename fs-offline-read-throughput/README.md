@@ -21,7 +21,7 @@ Run the notebooks included here in Hopsworks Jupyter, Databricks, Sagemaker Jupy
 
 ![experiment_setup_hardware](./images/fs-offline-experiment-setup-hardware.png)
 
-Hardware setup for feature stores used in benchmarks
+Hardware setup for feature stores used in benchmarks. Note that Hopsworks used NVMe disks.
 
 ![experiment_setup_dataset](./images/fs-offline-read-dataset.png)
 
@@ -59,3 +59,7 @@ Datasets used for offline read benchmarks
 
 ![pit_join_secs](./images/fs-offline-pit-join-td-throughput-relative.png)
 
+
+# Reference
+
+ * "Faster Reading with DuckDB and Arrow Flight on Hopsworks: Benchmark and Performance Evaluation of Offline Feature Stores", MSc Thesis, 2023, KTH University,  Ayushman Khazanchi.
