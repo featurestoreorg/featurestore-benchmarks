@@ -29,4 +29,8 @@ Run the notebooks included here in Hopsworks Jupyter, Databricks, Sagemaker Jupy
 # Benchmark Results
 
 
+![pandas_read_secs](./images/fs-offline-pandas-read-throughput-secs.png)
+Read from Offline Feature Store to Pandas Throughput (time taken)
 
+![pandas_read_relative](./images/fs-offline-pandas-read-throughput-relative.png)
+Read from Offline Feature Store to Pandas Throughput (relative)t
