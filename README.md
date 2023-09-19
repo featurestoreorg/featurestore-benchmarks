@@ -6,8 +6,13 @@
 
 We have defined experiments for two common use cases in training pipelines for Offline data:
 
- * Create training data as Pandas DataFrames
- * Create training data as files
+ * create training data as Pandas DataFrames,
+ * create training data as files.
+
+We provide two versions of the above experiments scenarios: 
+
+ * read data from a single feature group,
+ * read from from 3 feature groups with a point-in-time Join.
 
 We use the NYC taxi dataset for these benchmarks, due to its reasonable size (~3 GBs) and widespread use to 
 benchmark the performance of columnar datastores.
