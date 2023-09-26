@@ -1,5 +1,16 @@
 # Feature Store Benchmarks
 
+The benchmark results presented here should follow (these principles)[https://hannes.muehleisen.org/publications/DBTEST2018-performance-testing.pdf]:
+
+ * Reproducibility - you should be able to easily setup the feature store and re-run the source code provided in this repository
+ * Fairness - there should be no cherry-picking of results, hidden configuration parameters, unrealistic workload tuning,
+ * Realistic Workloads - the workloads benchmarked should be typical for the use of feature stores in the wild.
+
+
+Feature stores have 2 main APIs:
+
+ * Offline API for creating point-in-time consistent snapshots of feature data for training and batch inference,
+ * Online API for retrieving precomputed features for individual entities or groups of entities.
 
 
 ## Offline API Experiments
@@ -26,9 +37,9 @@ The potential performance bottlenecks that influence the Offline API experiments
 
 ## Online API Experiments
 
-We have defined experiments for two common us cases:
+We have defined experiments for the following use cases:
  * reading a row of precomputed features for a given entity, e.g., a user_id to read precomputed features for a user.
- * reading many rows of precomputed features for a given set of entites, e.g., the client provides a list of N user_id values and 
+ * reading a batch of rows of precomputed features for a given set of entites, e.g., the client provides a list of N user_id values and 
    N rows of precomputed feature values is returned.
  * feature freshness for streaming feature writes (how long does it take from when an event arrives at a message broker, until the corresponding feature value has been updated and is available for reading from the online feature store).
 
@@ -43,4 +54,4 @@ recommendations service has a SLA of 100ms before it returns the list of persona
 
 ## Contribute
 
-Feel free to create a PR to add a new feature store. Be sure to include all the hardware setup and software version numbers, that should be as close as possible to existing benchmarks to ensure apple-to-apple comparisons.
+Feel free to create a PR to add a new feature store or benchmark. Be sure to include all the hardware setup and software version numbers, that should be as close as possible to existing benchmarks to ensure apple-to-apple comparisons.
