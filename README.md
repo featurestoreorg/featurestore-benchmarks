@@ -7,11 +7,12 @@ The benchmark results presented here should follow (these principles)[https://ha
  * Realistic Workloads - the workloads benchmarked should be typical for the use of feature stores in the wild.
 
 
-Feature stores have 2 main APIs:
+Feature stores have 2 main APIs that are included in the benchmarks::
 
  * Offline API for creating point-in-time consistent snapshots of feature data for training and batch inference,
  * Online API for retrieving precomputed features for individual entities or groups of entities.
 
+These benchmarks are not general purpose AI benchmarks (such as (TPCx-AI)[https://www.tpc.org/tpcx-ai/TPCx-AI_An_Introduction_v1.3.0.pdf]) that cover video, image, and text data and model training. They are primarily for writing and reading structured data to/from the feature store. Reading from a feature store uses either the Offline or Online API.
 
 ## Offline API Experiments
 
