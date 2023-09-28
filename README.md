@@ -1,6 +1,6 @@
 # Feature Store Benchmarks
 
-The benchmark results presented here should follow (these principles)[https://hannes.muehleisen.org/publications/DBTEST2018-performance-testing.pdf]:
+The benchmark results presented here should follow [these database benchmarking principles](https://hannes.muehleisen.org/publications/DBTEST2018-performance-testing.pdf):
 
  * Reproducibility - you should be able to easily setup the feature store and re-run the source code provided in this repository
  * Fairness - there should be no cherry-picking of results, hidden configuration parameters, unrealistic workload tuning,
@@ -12,7 +12,7 @@ Feature stores have 2 main APIs that are included in the benchmarks::
  * Offline API for creating point-in-time consistent snapshots of feature data for training and batch inference,
  * Online API for retrieving precomputed features for individual entities or groups of entities.
 
-These benchmarks are not general purpose AI benchmarks (such as (TPCx-AI)[https://www.tpc.org/tpcx-ai/TPCx-AI_An_Introduction_v1.3.0.pdf]) that cover video, image, and text data and model training. They are primarily for writing and reading structured data to/from the feature store. Reading from a feature store uses either the Offline or Online API.
+These benchmarks are not general purpose AI benchmarks (such as [TPCx-AI](https://www.tpc.org/tpcx-ai/TPCx-AI_An_Introduction_v1.3.0.pdf])) that cover video, image, and text data and model training. They are primarily for writing and reading structured data to/from the feature store. Reading from a feature store uses either the Offline or Online API.
 
 ## Offline API Experiments
 
