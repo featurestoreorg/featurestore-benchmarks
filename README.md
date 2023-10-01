@@ -60,18 +60,17 @@ Feel free to create a PR to add a new feature store or benchmark. Be sure to inc
 
 ## DeWitt Clause
 
-The [DeWitt Clause](https://cube.dev/blog/dewitt-clause-or-can-you-benchmark-a-database?source=techstories.org) prevents the benchmarking of databases by vendors through legal means. However, the benchmarked systems all allow benchmarking, given this benchmark is public.
+The [DeWitt Clause](https://cube.dev/blog/dewitt-clause-or-can-you-benchmark-a-database?source=techstories.org) is a legal clause included in the terms of service of data platforms that is designed to prevent the benchmarking of a vendor's database. The following is our analysis of the terms of service of the benchmarked feature stores.
 
 **AWS**
 You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
 
-**GCP**
-In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause for the feature store service. 
-
 **Databricks**
 You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Platform Services and may disclose the results of the Benchmark other than for Beta Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Platform Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
 
-
 **Hopsworks**
 You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Platform Services and may disclose the results of the Benchmark other than for Beta Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Platform Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
+
+**GCP**
+In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause included for the feature store service. There are DeWitt clauses for BigQuery and other platforms, but not the feature store.
 
