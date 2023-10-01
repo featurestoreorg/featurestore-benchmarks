@@ -56,3 +56,22 @@ recommendations service has a SLA of 100ms before it returns the list of persona
 ## Contribute
 
 Feel free to create a PR to add a new feature store or benchmark. Be sure to include all the hardware setup and software version numbers, that should be as close as possible to existing benchmarks to ensure apple-to-apple comparisons.
+
+
+## DeWitt Clause
+
+The [DeWitt Clause](https://cube.dev/blog/dewitt-clause-or-can-you-benchmark-a-database?source=techstories.org) prevents the benchmarking of databases by vendors through legal means. However, the benchmarked systems all allow benchmarking, given this benchmark is public.
+
+**AWS**
+You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
+
+**GCP**
+In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause for the feature store service. 
+
+**Databricks**
+You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Platform Services and may disclose the results of the Benchmark other than for Beta Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Platform Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
+
+
+**Hopsworks**
+You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Platform Services and may disclose the results of the Benchmark other than for Beta Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Platform Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
+
