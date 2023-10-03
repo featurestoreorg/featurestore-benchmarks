@@ -16,9 +16,9 @@ import static com.google.common.math.Quantiles.percentiles;
 
 /* Usage:
  *
- * export DB_URL="jdbc:mysql://35.235.120.74:3306/overstockpoc?useSSL=false&allowPublicKeyRetrieval=true"
- * export USER="overstockpoc_davit000"
- * export PASS="mOXUjfWJUeHmkAjcLrlFkDHNEzxjrofy"
+ * export DB_URL="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_URL"
+ * export USER="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_USER"
+ * export PASS="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_PASSWORD"
  *
  * java -cp QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.BytewaxLatencyBenchmark BATCH_SIZE START_ID ROUNDS
  * BATCH_SIZE - Maximum number of ids to be fetched in one request. Default is 50.

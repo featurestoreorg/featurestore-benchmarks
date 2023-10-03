@@ -40,7 +40,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.example.Main</mainClass>
+              <mainClass>org.example.BytewaxLatencyBenchmark</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
