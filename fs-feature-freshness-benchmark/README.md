@@ -89,5 +89,12 @@ python3 -m bytewax.run "click_events:get_flow('$FEATURE_GROUP_NAME', $FEATURE_GR
 ```
 
 # Benchmark Results
+## Benchmark Setup
+![cluster_specs](https://github.com/featurestoreorg/featurestore-benchmarks/assets/4143920/a1df206e-6ec5-46dc-8a89-0c79d401cb2e)
+Hardware setup for feature stores used in benchmarks
+
+## Results
+![latency_graph](https://github.com/featurestoreorg/featurestore-benchmarks/assets/4143920/bdc575e4-39a3-4d48-a7da-0a6b9273ec8e)
+![latencies](https://github.com/featurestoreorg/featurestore-benchmarks/assets/4143920/43f37954-64ab-457b-b347-e9ece5cf19f9)
 
 
