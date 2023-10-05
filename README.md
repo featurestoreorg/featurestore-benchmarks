@@ -14,9 +14,11 @@ Feature stores have 2 main APIs that are included in the benchmarks::
 
 These benchmarks are not general purpose AI benchmarks (such as [TPCx-AI](https://www.tpc.org/tpcx-ai/TPCx-AI_An_Introduction_v1.3.0.pdf])) that cover video, image, and text data and model training. They are primarily for writing and reading structured data to/from the feature store. Reading from a feature store uses either the Offline or Online API.
 
-## Offline API Experiments
+## Offline API Benchmark
 
-We have defined experiments for two common use cases in training pipelines for Offline data:
+![Offline Store Read](./images/fs-offline-benchmark.png)
+
+We have defined benchmarks for two common use cases in training pipelines for Offline data:
 
  * create training data as Pandas DataFrames,
  * create training data as files.
@@ -36,9 +38,11 @@ The potential performance bottlenecks that influence the Offline API experiments
  * point-in-time correct joins of features across different feature groups;
  * the ablility to push down filters/queries when reading data to reduce the amount of data read/processed.
 
-## Online API Experiments
+## Online API Benchmark
 
-We have defined experiments for the following use cases:
+![Online Store Read](./images/fs-offline-benchmark.png)
+
+We have defined benchmarks for the following use cases:
  * reading a row of precomputed features for a given entity, e.g., a user_id to read precomputed features for a user.
  * reading a batch of rows of precomputed features for a given set of entites, e.g., the client provides a list of N user_id values and 
    N rows of precomputed feature values is returned.
@@ -52,6 +56,19 @@ The potential performance bottlenecks that influence the Online API experiments 
 Online benchmarks are aimed at real-time ML systems that have hard SLAs for making predictions. For example, maybe your personalized
 recommendations service has a SLA of 100ms before it returns the list of personalized ads. Such systems can generate between 100-500 candidates (e.g., using a vector database), requiring a batch lookup of 100-500 rows of feature values from the online feature store.
 
+## Feature Freshness Benchmark
+
+![Feature Freshness Read](./images/fs-freshness-benchmark.png)
+
+We have defined a benchmark for the following use case:
+ * streaming feature pipeline creates features from streaming event data (e.g., Kafka or Kinesis) and writes them to the online feature store
+ * an online feature store client reads precomputed features, created by the streaming feature pipeline
+ * measure the time take from when the event data arrives in the message bus (e.g., Kafka) and when the features computed from the event(s) are available for reading by the online feature store client.
+
+The potential performance bottlenecks that influence the feature freshness experiments include:
+
+ * latency of the streaming feature pipeline (e.g., per-key streaming (Flink) vs micro-batch (Spark))
+ * time taken to write features in the online store that are then made available for reading by clients.
 
 ## Contribute
 
