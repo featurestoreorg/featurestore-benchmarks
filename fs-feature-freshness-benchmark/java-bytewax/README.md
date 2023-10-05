@@ -55,7 +55,7 @@ export DB_URL="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_URL" # You might
 export USER="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_USER"
 export PASS="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_PASSWORD"
 
-java -cp QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.BytewaxLatencyBenchmark BATCH_SIZE START_ID ROUNDS
+java -jar bytewaxlatencybenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar BATCH_SIZE START_ID ROUNDS
 # BATCH_SIZE - Maximum number of ids to be fetched in one request. Default is 50.
 # START_ID - Id of the first record to be fetched. Default is 1.
 # ROUNDS - How many batches to fetch. Default is 100.
@@ -79,7 +79,7 @@ python3 -m bytewax.run "click_events:get_flow('$FEATURE_GROUP_NAME', $FEATURE_GR
 **Measured latencies are for us-west-3a to us-west2-a:**
 
 ```console
-java -cp QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.BytewaxLatencyBenchmarkHopsworks 50 1 100
+java -jar bytewaxlatencybenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar 50 1 100
 ...
 Statistics for 100 rounds with batches of size up to 50:
 
