@@ -43,7 +43,7 @@ You need  to have Hopsworks cluster host address, hopsworks project name and
 
 Once you have the above, define the following environment variables:
 
-**Console 1: Create the feature group**
+**Console 1: Define variables**
 ```console
 export FEATURE_GROUP_NAME=clicks
 export FEATURE_GROUP_VERSION=1
@@ -60,7 +60,7 @@ Full documentation how to create feature group using HSFS APIs can be found [her
 python3 ./bytewax_scripts/recreate_fg.py
 ```
 
-## RUN
+## Run the benchmarking tool
 **Console 2: Start the benchmarking tool**
 To get necessary environment variables in Feature Store UI go to Storage Connectors -> 
 FEATURE_STORENAME_USER_onlinefeaturestore. Then click to edit button and Select following variables:
