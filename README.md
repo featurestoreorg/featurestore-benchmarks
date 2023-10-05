@@ -40,7 +40,7 @@ The potential performance bottlenecks that influence the Offline API experiments
 
 ## Online API Benchmark
 
-![Online Store Read](./images/fs-offline-benchmark.png)
+![Online Store Read](./images/fs-online-benchmark.png)
 
 We have defined benchmarks for the following use cases:
  * reading a row of precomputed features for a given entity, e.g., a user_id to read precomputed features for a user.
