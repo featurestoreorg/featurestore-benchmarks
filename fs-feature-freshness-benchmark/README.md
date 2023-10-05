@@ -62,8 +62,8 @@ python3 ./bytewax_scripts/recreate_fg.py
 
 ## Start the benchmarking tool
 **Console 2: Start the benchmarking tool**
-To get necessary environment variables in Feature Store UI go to Storage Connectors -> 
-FEATURE_STORENAME_USER_onlinefeaturestore. Then click to edit button and Select following variables:
+
+To get necessary environment variables in Feature Store UI go to Storage Connectors -> FEATURE_STORENAME_USER_onlinefeaturestore. Then click to edit button and Select following variables:
 ```console
 export DB_URL="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_URL" # You might need to change the IP to an IP that you can reach from your benchmark machine
 export USER="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_USER"
