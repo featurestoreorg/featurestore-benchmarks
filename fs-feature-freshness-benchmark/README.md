@@ -47,7 +47,7 @@ Once you have the above, define the following environment variables:
 ```console
 export FEATURE_GROUP_NAME=clicks
 export FEATURE_GROUP_VERSION=1
-export HOPSWORKS_HOST=6d71e8e0-5b7f-11ee-9a46-03cec0f3024e.cloud.hopsworks.ai
+export HOPSWORKS_HOST=REPLACE_WITH_YOUR_FESTURE_STORE_HOST
 export HOPSWORKS_API_KEY=REPLACE_WITH_YOUR_HOPSWORKS_API_KEY
 export HOPSWOERKS_PROJECT_NAME=REPLACE_WITH_YOUR_HOPSWOERKS_PROJECT_NAME
 ```
