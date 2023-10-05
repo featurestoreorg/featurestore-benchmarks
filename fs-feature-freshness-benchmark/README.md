@@ -34,7 +34,7 @@ cd ./featurestore-benchmarks/fs-feature-freshness-benchmark/java-bytewax
 ## Build the Java client
 ```console
 mvn clean compile assembly:single
-# Jar will be created as target/QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar
+# Jar will be created as target/bytewaxlatencybenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 ## Define environment variables
