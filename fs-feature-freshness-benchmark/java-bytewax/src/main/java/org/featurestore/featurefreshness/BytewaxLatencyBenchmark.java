@@ -1,4 +1,4 @@
-package org.example;
+package org.featurestore.featurefreshness;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.IntSummaryStatistics;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
 
@@ -20,7 +19,7 @@ import static com.google.common.math.Quantiles.percentiles;
  * export USER="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_USER"
  * export PASS="REPLACE_WITH_YOUR_ONLINE_FEATURE_STORE_CONNECTOR_PASSWORD"
  *
- * java -cp QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.BytewaxLatencyBenchmark BATCH_SIZE START_ID ROUNDS
+ * java -jar bytewaxlatencybenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar BATCH_SIZE START_ID ROUNDS
  * BATCH_SIZE - Maximum number of ids to be fetched in one request. Default is 50.
  * START_ID - Id of the first record to be fetched. Default is 1.
  * ROUNDS - How many batches to fetch. Default is 100.
