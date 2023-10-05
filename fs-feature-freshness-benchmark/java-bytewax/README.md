@@ -5,10 +5,16 @@ the application (in this case Bytewax) and them being consumed from the online f
 (in this case simple Java client).
 
 ## Setup
-Install python libraries 
+Install the required python libraries
 ```console
 pip install hopsworks
 pip install bytewax
+```
+
+## Clone tutorials repository
+```bash
+git clone https://github.com/featurestoreorg/featurestore-benchmarks
+cd ./featurestore-benchmarks/fs-feature-freshness-benchmark/java-bytewax
 ```
 
 ## BUILD java client
@@ -17,7 +23,12 @@ mvn clean compile assembly:single
 # Jar will be created as target/QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
-## RUN
+## Define environment variables
+You need  to have Hopsworks cluster host address, hopsworks project name and
+[api key](https://docs.hopsworks.ai/3.3/user_guides/projects/api_key/create_api_key/)
+
+Once you have the above, define the following environment variables:
+
 **Console 1: Create the feature group**
 ```console
 export FEATURE_GROUP_NAME=clicks
@@ -25,9 +36,17 @@ export FEATURE_GROUP_VERSION=1
 export HOPSWORKS_HOST=6d71e8e0-5b7f-11ee-9a46-03cec0f3024e.cloud.hopsworks.ai
 export HOPSWORKS_API_KEY=REPLACE_WITH_YOUR_HOPSWORKS_API_KEY
 export HOPSWOERKS_PROJECT_NAME=REPLACE_WITH_YOUR_HOPSWOERKS_PROJECT_NAME
+```
 
+## create a feature group using the HSFS APIs.
+Full documentation how to create feature group using HSFS APIs can be found [here](https://docs.hopsworks.ai/3.3/user_guides/fs/feature_group/create/).
+
+**Console 1: Create the feature group**
+```console
 python3 ./bytewax_scripts/recreate_fg.py
 ```
+
+## RUN
 **Console 2: Start the benchmarking tool**
 To get necessary environment variables in Feature Store UI go to Storage Connectors -> 
 FEATURE_STORENAME_USER_onlinefeaturestore. Then click to edit button and Select following variables:
@@ -42,6 +61,7 @@ java -cp QueryBenchmark-1.0-SNAPSHOT-jar-with-dependencies.jar org.example.Bytew
 # ROUNDS - How many batches to fetch. Default is 100.
 ```
 
+## simulate click events and write to online feature store.
 **Console 1: Start sending records**
 ```console
 cd bytewax_scripts
