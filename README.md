@@ -18,6 +18,8 @@ These benchmarks are not general purpose AI benchmarks (such as [TPCx-AI](https:
 
 ![Offline Store Read](./images/fs-offline-benchmark.png)
 
+[Click here to go to the Offline Read Benchmark Results](https://github.com/featurestoreorg/featurestore-benchmarks/tree/main/fs-offline-benchmark#read-pandas-dataframe-benchmarks)
+
 We have defined benchmarks for two common use cases in training pipelines for Offline data:
 
  * create training data as Pandas DataFrames,
@@ -42,6 +44,8 @@ The potential performance bottlenecks that influence the Offline API experiments
 
 ![Online Store Read](./images/fs-online-benchmark.png)
 
+[Click here to go to the Offline Read Benchmark Results](https://github.com/featurestoreorg/featurestore-benchmarks/tree/main/fs-online-benchmark#benchmark-results)
+
 We have defined benchmarks for the following use cases:
  * reading a row of precomputed features for a given entity, e.g., a user_id to read precomputed features for a user.
  * reading a batch of rows of precomputed features for a given set of entites, e.g., the client provides a list of N user_id values and 
@@ -59,6 +63,8 @@ recommendations service has a SLA of 100ms before it returns the list of persona
 ## Feature Freshness Benchmark
 
 ![Feature Freshness Read](./images/fs-freshness-benchmark.png)
+
+[Click here to go to the Feature Freshness Benchmark Results](https://github.com/featurestoreorg/featurestore-benchmarks/tree/main/fs-feature-freshness-benchmark#results)
 
 We have defined a benchmark for the following use case:
  * streaming feature pipeline creates features from streaming event data (e.g., Kafka or Kinesis) and writes them to the online feature store
