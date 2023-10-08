@@ -15,10 +15,11 @@ Feature Store Freshness using Bytewax event simulator and java application for f
 The current feature stores benchmarked here are:
 
  * Hopsworks Feature Store
+
+Coming Soon
  * [AWS Sagemaker]
  * [GCP Vertex]
- * [Databricks]
- 
+
 
 # How to run the Benchmarks
 
@@ -106,8 +107,9 @@ Hardware setup for feature stores used in benchmarks
 **AWS Sagemaker** supports [streaming ingestion to the feature store](https://aws.amazon.com/blogs/machine-learning/using-streaming-ingestion-with-amazon-sagemaker-feature-store-to-make-ml-backed-decisions-in-near-real-time/) 
 [Results coming soon]
 
-**Databricks** [synchronizes offline tables with an online store periodically](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store) but also supports [streaming ingestion](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store). [See API](https://api-docs.databricks.com/python/feature-store/latest/feature_store.client.html). 
-[Results coming soon]
-
 **GCP Vertex** provides a [REST API for streaming ingestion to the feature store](https://cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream). 
 [Results coming soon]
+
+**Databricks** [synchronizes offline tables with an online store periodically](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store) but also supports [streaming ingestion](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store). [See API](https://api-docs.databricks.com/python/feature-store/latest/feature_store.client.html). 
+Databricks will be included here when they provide an online feature serving API that enables feature freshness to be measured. 
+
