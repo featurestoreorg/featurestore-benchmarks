@@ -1,28 +1,27 @@
 import random
-from time import sleep
-from locust import FastHttpUser, HttpUser, User, constant, task, between, events, constant_throughput
+from locust import HttpUser, constant, task, events, run_single_user
 from locust.runners import MasterRunner
-
 import json
 import google.auth
 import google.auth.transport.requests
 import numpy as np
 import os
-from common.stop_watch import stopwatch
+
+
 
 @events.init.add_listener
 def on_locust_init(environment, **kwargs):
-    environment.work_dir = "./"
+    environment.work_dir = ""
+    LOCUST_WORK_DIR="/home/locust/tmp"
     if isinstance(environment.runner, MasterRunner):
         print("Running on master node, distributed mode")
-        environment.work_dir = "/home/locust"
+        environment.work_dir = LOCUST_WORK_DIR
         print("Setting parent directory for configurations files:", environment.work_dir)
     else:
-        print("Running on a worker or standalone mode")        
-        print("Using parent directory for configurations files:", environment.work_dir)
-
+        print("Running on a worker or standalone mode")          
+            
     with open(os.path.join(environment.work_dir,"vertex_configuration.json")) as json_file:
-        config_data = json.load(json_file)          
+        config_data = json.load(json_file)    
 
     environment.location = config_data.get("location")
     environment.project = config_data.get("project")
@@ -34,24 +33,21 @@ def on_locust_init(environment, **kwargs):
     if config_data.get("GOOGLE_APPLICATION_CREDENTIALS"):
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(environment.work_dir, config_data.pop("GOOGLE_APPLICATION_CREDENTIALS"))
 
-
-
 @events.test_start.add_listener
 def on_test_start(environment, **kwargs):
-    print("A new test is starting")
-
+    print("Starting tests")
 
 @events.test_stop.add_listener
 def on_test_stop(environment, **kwargs):
-    print("A new test is ending")
+    print("Ending tests")
+    os.environ.pop("GOOGLE_APPLICATION_CREDENTIALS")
 
 
-class VertexTestOnlineRead(FastHttpUser):
+class VertexTestOnlineRead(HttpUser):
     wait_time = constant(0.1)
 
     def __init__(self,*args, **kwargs):
-        super().__init__(*args, **kwargs)
-       
+        super().__init__(*args, **kwargs)       
 
     def on_start(self):
          # authenticate
@@ -60,13 +56,18 @@ class VertexTestOnlineRead(FastHttpUser):
         self.client.headers = {"Authorization": f"Bearer {creds.token}","Connection": "keep-alive","Keep-Alive": "timeout=5, max=2000"}
         self.wait()
     
+    def list_features(self):
+        # list all features
+        self.client.get(
+            url=f"/v1/projects/{self.project}/locations/{self.environment.location}/featurestores/{self.environment.feature_store}/entityTypes"
+        )
+
     @task
     def read_online_single_all_features(self):
         # online read feature vector- all columns single row  
-
         # read json schema      
         with open(os.path.join(self.environment.work_dir, self.environment.schema_json)) as f:
-            schema = json.load(f)
+            schema = json.load(f)        
         # payload
         data = {
             "entityId": str(np.random.randint(self.environment.number_of_rows)),
@@ -77,15 +78,14 @@ class VertexTestOnlineRead(FastHttpUser):
             }
         }
         # send
-        self.client.post(
+        response=self.client.post(
             url=f"/v1/projects/{self.environment.project}/locations/{self.environment.location}/featurestores/{self.environment.feature_store}/entityTypes/{self.environment.entity_name}:readFeatureValues",
             json=data,
-             headers=self.client.headers
-            
+             headers=self.client.headers            
         )
         
 
-    @task
+    
     def read_online_single_feature(self):
         # online read feature vector- single random column single row
         
@@ -132,3 +132,6 @@ class VertexTestOnlineRead(FastHttpUser):
             json=data,
             headers=self.client.headers
         )
+        
+if __name__ == "__main__":
+    run_single_user(VertexTestOnlineRead)

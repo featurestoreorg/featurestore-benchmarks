@@ -1,0 +1,23 @@
+{
+    "id": {"value_type": "INT64"},
+    "ride_id": {"value_type": "STRING"},
+    "pickup_datetime": {"value_type": "INT64"},
+    "pickup_longitude": {"value_type": "DOUBLE"},
+    "pickup_latitude": {"value_type": "DOUBLE"},
+    "dropoff_latitude": {"value_type": "DOUBLE"},
+    "passenger_count": {"value_type": "INT64"},
+    "taxi_id": {"value_type": "INT64"},
+    "driver_id": {"value_type": "INT64"},
+    "distance": {"value_type": "DOUBLE"},
+    "pickup_distance_to_jfk": {"value_type": "DOUBLE"},
+    "dropoff_distance_to_jfk": {"value_type": "DOUBLE"},
+    "dropoff_distance_to_jfk": {"value_type": "DOUBLE"},
+    "pickup_distance_to_ewr": {"value_type": "DOUBLE"},
+    "dropoff_distance_to_ewr": {"value_type": "DOUBLE"},
+    "pickup_distance_to_lgr": {"value_type": "DOUBLE"},
+    "dropoff_distance_to_lgr": {"value_type": "DOUBLE"},
+    "pickup_distance_to_ewr": {"value_type": "DOUBLE"},
+    "year": {"value_type": "INT64"},
+    "weekday": {"value_type": "INT64"},
+    "hour": {"value_type": "INT64"}
+}

@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 import google.auth
 
-class CreateData:
+class VertexCreateEntityHelper:
 
     def __init__(self) -> None:
 
@@ -21,16 +21,19 @@ class CreateData:
         self.entity_type_id = config_data.get("entity_name")
         self.gcs_source_uri =  config_data.get("gcs_source_uri") # Replace with your GCS path
         self.primary_key = config_data.get("primary_key_id")
+        self.schema = config_data.get("feature_schema_json")
+        if config_data.get("GOOGLE_APPLICATION_CREDENTIALS"):
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(config_data.pop("GOOGLE_APPLICATION_CREDENTIALS"))
 
-        self.creds,_ = google.auth.default();
-        aiplatform.init(project=self.project_id, location=self.location, credentials=self.creds)
+
+        aiplatform.init(project=self.project_id, location=self.location)
         # Step 1: Create an entity type in Google Feature Store
         self.featurestore = aiplatform.gapic.FeaturestoreServiceClient(client_options={"api_endpoint": f"{self.location}-aiplatform.googleapis.com"})
         self.entity_type_api = aiplatform.gapic.EntityType()
         self.fs =  Featurestore(
                 featurestore_name=self.featurestore_id,
                 project=self.project_id,
-                location=self.location
+                location=self.location                
             )
 
     def get_or_create_entity(self, entity_name):
@@ -48,7 +51,7 @@ class CreateData:
         return  entity_type
 
     def create_features(self,entity_type):
-        with open("features_schema.json") as f:
+        with open(self.schema) as f:
             FEATURE_CONFIGS = json.load(f)
 
         entity_type.batch_create_features(
@@ -58,8 +61,7 @@ class CreateData:
         # Step 3: Ingest data into the entity type using ingest_from_gcs
         entity_type.ingest_from_gcs(
             feature_ids= [feature.name for feature in entity_type.list_features()],
-            feature_time=datetime.strptime('20/09/23',
-                        '%d/%m/%y'),
+            feature_time= "timestamp", #datetime.strptime('06/10/23','%d/%m/%y'),#"eventtime",
             entity_id_field=self.primary_key,
             gcs_source_uris=self.gcs_source_uri,
             gcs_source_type="csv",
@@ -68,8 +70,9 @@ class CreateData:
         )
 
 
-data = CreateData()
+vertex_helper = VertexCreateEntityHelper()
 
-entity = data.get_or_create_entity("nyc_1ml_v3")
-data.create_features(entity)
-data.ingest_data(entity, workers=2)
+entity = vertex_helper.get_or_create_entity(vertex_helper.entity_type_id)
+vertex_helper.create_features(entity)
+vertex_helper.ingest_data(entity, workers=2)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=""

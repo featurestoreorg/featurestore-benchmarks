@@ -1,4 +1,0 @@
-locust
-google-cloud-aiplatform
-google-auth
-pandas
