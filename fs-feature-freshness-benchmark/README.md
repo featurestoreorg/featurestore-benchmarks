@@ -15,6 +15,10 @@ Feature Store Freshness using Bytewax event simulator and java application for f
 The current feature stores benchmarked here are:
 
  * Hopsworks Feature Store
+ * [AWS Sagemaker]
+ * [GCP Vertex]
+ * [Databricks]
+ 
 
 # How to run the Benchmarks
 
@@ -94,7 +98,16 @@ python3 -m bytewax.run "click_events:get_flow('$FEATURE_GROUP_NAME', $FEATURE_GR
 Hardware setup for feature stores used in benchmarks
 
 ## Results
+**Hopsworks** supports [streaming ingestion to the feature store using Flink, Beam, Spark, and Bytewax](https://docs.hopsworks.ai/3.3/user_guides/fs/feature_group/create/#streaming-write-api)
+
 ![latency_graph](https://github.com/featurestoreorg/featurestore-benchmarks/assets/4143920/bdc575e4-39a3-4d48-a7da-0a6b9273ec8e)
 ![latencies](https://github.com/featurestoreorg/featurestore-benchmarks/assets/4143920/43f37954-64ab-457b-b347-e9ece5cf19f9)
 
+**AWS Sagemaker** supports [streaming ingestion to the feature store](https://aws.amazon.com/blogs/machine-learning/using-streaming-ingestion-with-amazon-sagemaker-feature-store-to-make-ml-backed-decisions-in-near-real-time/) 
+[Results coming soon]
 
+**Databricks** [synchronizes offline tables with an online store periodically](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store) but also supports [streaming ingestion](https://docs.databricks.com/en/machine-learning/feature-store/publish-features.html#publish-streaming-features-to-an-online-store). [See API](https://api-docs.databricks.com/python/feature-store/latest/feature_store.client.html). 
+[Results coming soon]
+
+**GCP Vertex** provides a [REST API for streaming ingestion to the feature store](https://cloud.google.com/vertex-ai/docs/featurestore/ingesting-stream). 
+[Results coming soon]
