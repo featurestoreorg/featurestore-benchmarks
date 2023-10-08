@@ -44,7 +44,7 @@ The potential performance bottlenecks that influence the Offline API experiments
 
 ![Online Store Read](./images/fs-online-benchmark.png)
 
-[Click here to go to the Offline Read Benchmark Results](https://github.com/featurestoreorg/featurestore-benchmarks/tree/main/fs-online-benchmark#benchmark-results)
+[Click here to go to the Online Read Benchmark Results](https://github.com/featurestoreorg/featurestore-benchmarks/tree/main/fs-online-benchmark#benchmark-results)
 
 We have defined benchmarks for the following use cases:
  * reading a row of precomputed features for a given entity, e.g., a user_id to read precomputed features for a user.
