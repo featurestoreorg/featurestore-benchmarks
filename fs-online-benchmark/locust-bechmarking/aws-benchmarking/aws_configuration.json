@@ -1,0 +1,9 @@
+{
+    "AWS_ACCESS_KEY": "",
+    "AWS_SECRET" :"",
+    "REGION": "",
+    "feature_group_name": "",
+    "batch_size": 100,
+    "number_of_rows": 500,
+    "feature_names": []
+}

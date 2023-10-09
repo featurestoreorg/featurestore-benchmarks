@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  master:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    image: locust-onlinebench:1
+    ports:
+     - "8089:8089"
+    volumes:
+      - ./:/home/locust
+    command: -f /home/locust/locustfile_vertex.py --master --headless -H https://<REGION>-aiplatform.googleapis.com --expect-workers 4 -u 16 -r 1 -t 30 --html=result-dist.html --logfile master.log
+  
+  worker:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    image: locust-onlinebench:1
+    volumes:
+      - ./:/home/locust
+    command: -f /home/locust/locustfile_vertex.py --worker --master-host master --logfile worker.txt
