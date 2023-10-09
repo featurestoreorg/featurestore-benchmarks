@@ -9,14 +9,17 @@ In this benchmark, we measure the read **50, 90, 95, and 99 percential latencies
 The current feature stores benchmarked here are:
 
  * Hopsworks Feature Store, version 3.4
- * Vertex Feature Store (Legacy), version (September 2023)
+ * Vertex Feature Store (Legacy), version (September 2023)*
  * Sagemaker Feature Store, version  (September 2023)
 
 (We did not benchmark Databricks Feature Store, because Databricks Feature Store as of now does not have a public API for reading online table. Reading online data can instead be done by querying its underlyging online database provider e.g. AWS, Azure).
 
+*Note: the latency numbers for Vertex do not include deserializing the results returned by the REST API, which both Hopsworks and Sagemaker do deserialize the results into a Python array (or array of arrays). As such, expect real-world Vertex latencies to be somewhat higher, depending on the data types that need to be deserialized.
+
 # How to run the Benchmarks
 
 We use locust framework for load testing. The locustfiles can be launched on a client machine. It can launched either as a standlone process or in distributed mode using docker. Individual feature store specific instructions can be found under its sub-directory. For Hopsworks Featue Store we used locust framework as part of its feature store API [git repo](https://github.com/logicalclocks/feature-store-api/tree/master/locust_benchmark).
+
 
 # Benchmarking setup
 The client VMs used for running locusts are as shown here
