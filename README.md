@@ -76,12 +76,11 @@ The potential performance bottlenecks that influence the feature freshness exper
  * latency of the streaming feature pipeline (e.g., per-key streaming (Flink) vs micro-batch (Spark))
  * time taken to write features in the online store that are then made available for reading by clients.
 
-## Contribute
 
-Feel free to create a PR to add a new feature store or benchmark. Be sure to include all the hardware setup and software version numbers, that should be as close as possible to existing benchmarks to ensure apple-to-apple comparisons.
+## Platforms included in this Benchmark
 
+The first feature stores evaluated by the teams at Hopsworks, KTH, and Karolinska Institute were chosen because they were (1) reproducible - you can create an account and re-run the code to reproduce the results, (2) they have a ready-to-use feature store (not a virtual feature store). See how to contribute, below, for how to add a new feature store.
 
-## DeWitt Clause
 
 The [DeWitt Clause](https://cube.dev/blog/dewitt-clause-or-can-you-benchmark-a-database?source=techstories.org) is a legal clause included in the terms of service of data platforms that is designed to prevent the benchmarking of a vendor's database. The following is our analysis of the terms of service of the benchmarked feature stores.
 
@@ -96,4 +95,18 @@ You may perform benchmarks or comparative tests or evaluations (each, a “Bench
 
 **GCP**
 In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause included for the feature store service. There are DeWitt clauses for BigQuery and other platforms, but not the feature store.
+
+## Discussion
+
+Please discuss these feature store benchmarks on the [featurestore.org slack channel](https://featurestoreorg.slack.com/join/shared_invite/zt-ssh8dec1-IsvwLdTsRMssjT4~Ru2RKg#/shared-invite/email)).
+
+## How to Contribute
+
+Feel free to create a PR to add a new feature store or benchmark. Be sure to include all the hardware setup and software version numbers, that should be as close as possible to existing benchmarks to ensure apple-to-apple comparisons. For virtual feature stores, include the automated complete setup of the feature store plus online and offline stores.
+
+## Contact
+
+Online Benchmarks: Dhananjay Mukhedkar <dhananjay.mukhedkar@ki.se> 
+Offline Benchmarks: Ayushman Khazanchi <ayushman@kth.se>
+Feature Freshness Benchmarks: Davit Bzhalava <davit@hopsworks.ai>
 
