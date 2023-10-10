@@ -60,20 +60,20 @@ Following were the latencies as reported in locust results.
 
 - Latencies for batch size=1 (single feature vector)
 
-<img src="./images/Batch_1.png" width="400" />
+<img src="./images/Batch_1.png" width="600" />
 
 - Latencies for batch size=100
 
- <img src="./images/Batch_100.png" width="400" />
+ <img src="./images/Batch_100.png" width="600" />
 
 - Latencies for batch size=250*
 
- <img src="./images/Batch_250.png" width="400" />
+ <img src="./images/Batch_250.png" width="600" />
 
 
 - Latencies for batch size=500*
 
- <img src="./images/Batch_500.png" width="400" />
+ <img src="./images/Batch_500.png" width="600" />
 
 <br/><br/>
 
