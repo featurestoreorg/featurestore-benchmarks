@@ -98,7 +98,7 @@ In general, GCP does not allow benchmarking of their services. However, as of Oc
 
 ## Discussion
 
-Please discuss these feature store benchmarks on the [featurestore.org slack channel](https://featurestoreorg.slack.com/join/shared_invite/zt-ssh8dec1-IsvwLdTsRMssjT4~Ru2RKg#/shared-invite/email)).
+Please discuss these feature store benchmarks on the [featurestore.org slack channel](https://featurestoreorg.slack.com/join/shared_invite/zt-ssh8dec1-IsvwLdTsRMssjT4~Ru2RKg#/shared-invite/email).
 
 ## How to Contribute
 
