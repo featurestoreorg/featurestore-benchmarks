@@ -79,7 +79,7 @@ The potential performance bottlenecks that influence the feature freshness exper
 
 ## Platforms included in this Benchmark
 
-The first feature stores evaluated by the teams at Hopsworks, KTH, and Karolinska Institute were chosen because they were (1) reproducible - you can create an account and re-run the code to reproduce the results, (2) they have a ready-to-use feature store (not a virtual feature store). See how to contribute, below, for how to add a new feature store.
+The first feature stores evaluated were chosen because they were (1) reproducible - you can create an account and re-run the code to reproduce the results, (2) they have a ready-to-use feature store (not a virtual feature store). We gladly receive contributions for new feature stores, DeWitt Clause permitting. See how to contribute, below, for how to add a new feature store.
 
 
 The [DeWitt Clause](https://cube.dev/blog/dewitt-clause-or-can-you-benchmark-a-database?source=techstories.org) is a legal clause included in the terms of service of data platforms that is designed to prevent the benchmarking of a vendor's database. The following is our analysis of the terms of service of the benchmarked feature stores.
@@ -94,7 +94,7 @@ You may perform benchmarks or comparative tests or evaluations (each, a “Bench
 You may perform benchmarks or comparative tests or evaluations (each, a “Benchmark”) of the Platform Services and may disclose the results of the Benchmark other than for Beta Services. If you perform or disclose, or direct or permit any third party to perform or disclose, any Benchmark of any of the Platform Services, you (i) will include in any disclosure, and will disclose to us, all information necessary to replicate such Benchmark, and (ii) agree that we may perform and disclose the results of Benchmarks of your products or services, irrespective of any restrictions on Benchmarks in the terms governing your products or services.
 
 **GCP**
-In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause included for the feature store service. There are DeWitt clauses for BigQuery and other platforms, but not the feature store.
+In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause included for the feature store service. There are DeWitt clauses for BigQuery, BigTable, and other platforms, but not the feature store. As of Oct 11th 2023, there is a preview version of a new version of their feature store based on BigTable, which based on our analysis is covered by the DeWitt Clause.
 
 ## Discussion
 
@@ -106,7 +106,7 @@ Feel free to create a PR to add a new feature store or benchmark. Be sure to inc
 
 ## Contact
 
-Online Benchmarks: Dhananjay Mukhedkar <dhananjay.mukhedkar@ki.se> 
-Offline Benchmarks: Ayushman Khazanchi <ayushman@kth.se>
-Feature Freshness Benchmarks: Davit Bzhalava <davit@hopsworks.ai>
+ * Online Benchmarks: Dhananjay Mukhedkar <dhananjay.mukhedkar@ki.se> 
+ * Offline Benchmarks: Ayushman Khazanchi <ayushman@kth.se>
+ * Feature Freshness Benchmarks: Davit Bzhalava <davit@hopsworks.ai>
 
