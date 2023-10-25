@@ -96,6 +96,9 @@ You may perform benchmarks or comparative tests or evaluations (each, a “Bench
 **GCP**
 In general, GCP does not allow benchmarking of their services. However, as of October 2nd 2023, there is no DeWitt Clause included for the feature store service. There are DeWitt clauses for BigQuery, BigTable, and other platforms, but not the feature store. As of Oct 11th 2023, there is a preview version of a new version of their feature store based on BigTable, which based on our analysis is covered by the DeWitt Clause.
 
+**Feast**
+We would welcome contributions for benchmarks with Feast. Feast does not include a production-quality offline or online store. Instead, you have to configure and install external stores. To the best of our knowledge, there are no existing benchmarks for Feast's offline store. There is, however, a [benchmark of the online store for Astra, Redis, and Dynamo available here](https://feast.dev/blog/performance-test-for-python-based-feast-feature-server/). In contrast with our benchmark, this benchmark is not based on a well-known dataset with mixed data types, but rather uses 50 integer features. 
+
 ## Discussion
 
 Please discuss these feature store benchmarks on the [featurestore.org slack channel](https://featurestoreorg.slack.com/join/shared_invite/zt-ssh8dec1-IsvwLdTsRMssjT4~Ru2RKg#/shared-invite/email).
