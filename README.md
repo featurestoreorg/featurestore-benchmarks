@@ -1,5 +1,10 @@
 # Feature Store Benchmarks
 
+Feature stores are a new category of data platform that manages data for model training and inference. We believe that benchmarks are important for feature stores as:
+
+ * benchmarks are good way to measure progress in a field;
+ * faster feature stores will change how users work with data in AI, enabling more data-centric AI engineering.
+
 The benchmark results presented here should follow [these database benchmarking principles](https://hannes.muehleisen.org/publications/DBTEST2018-performance-testing.pdf):
 
  * Reproducibility - you should be able to easily setup the feature store and re-run the source code provided in this repository
